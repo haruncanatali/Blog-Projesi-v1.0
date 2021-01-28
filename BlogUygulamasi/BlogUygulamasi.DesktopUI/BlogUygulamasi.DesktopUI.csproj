@@ -1,0 +1,308 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{5EF6D31D-9E1B-4691-91D8-C0071847CC47}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>BlogUygulamasi.DesktopUI</RootNamespace>
+    <AssemblyName>BlogUygulamasi.DesktopUI</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevExpress.Data.v18.1, Version=18.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Images.v18.1, Version=18.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Printing.v18.1.Core, Version=18.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Sparkline.v18.1.Core, Version=18.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Utils.v18.1, Version=18.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraBars.v18.1, Version=18.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraEditors.v18.1, Version=18.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraGrid.v18.1, Version=18.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraLayout.v18.1, Version=18.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraPrinting.v18.1, Version=18.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="HTMLEditor, Version=1.8.1.215, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Zoople.HTMLEditor.1.8.1.215\lib\net472\HTMLEditor.dll</HintPath>
+    </Reference>
+    <Reference Include="MstHtmlEditor, Version=4.20.11.22, Culture=neutral, PublicKeyToken=8ee81cea60080003, processorArchitecture=MSIL">
+      <HintPath>..\packages\BaiqiSoft.HtmlEditor.NET4.20.11.22\lib\MstHtmlEditor.dll</HintPath>
+    </Reference>
+    <Reference Include="Ninject, Version=3.3.4.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Ninject.3.3.4\lib\net45\Ninject.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Runtime.Remoting" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="UIAutomationClient" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Forms\AdminIslemleri\AdminEkle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AdminIslemleri\AdminEkle.Designer.cs">
+      <DependentUpon>AdminEkle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\AdminIslemleri\AdminListe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AdminIslemleri\AdminListe.Designer.cs">
+      <DependentUpon>AdminListe.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\AdminIslemleri\AdminSil.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AdminIslemleri\AdminSil.Designer.cs">
+      <DependentUpon>AdminSil.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\GununSozuIslemleri\GununSozuEkle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\GununSozuIslemleri\GununSozuEkle.Designer.cs">
+      <DependentUpon>GununSozuEkle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\GununSozuIslemleri\GununSozuGuncelle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\GununSozuIslemleri\GununSozuGuncelle.Designer.cs">
+      <DependentUpon>GununSozuGuncelle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\GununSozuIslemleri\GununSozuListe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\GununSozuIslemleri\GununSozuListe.Designer.cs">
+      <DependentUpon>GununSozuListe.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\GununSozuIslemleri\GununSozuSil.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\GununSozuIslemleri\GununSozuSil.Designer.cs">
+      <DependentUpon>GununSozuSil.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\KategoriIslemleri\KategoriEkle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\KategoriIslemleri\KategoriEkle.Designer.cs">
+      <DependentUpon>KategoriEkle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\KategoriIslemleri\KategoriGuncelle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\KategoriIslemleri\KategoriGuncelle.Designer.cs">
+      <DependentUpon>KategoriGuncelle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\KategoriIslemleri\KategoriListele.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\KategoriIslemleri\KategoriListele.Designer.cs">
+      <DependentUpon>KategoriListele.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\KategoriIslemleri\KategoriSil.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\KategoriIslemleri\KategoriSil.Designer.cs">
+      <DependentUpon>KategoriSil.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\YaziIslemleri\BlogGuncelle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\YaziIslemleri\BlogGuncelle.Designer.cs">
+      <DependentUpon>BlogGuncelle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\YaziIslemleri\BloglariGoruntule.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\YaziIslemleri\BloglariGoruntule.Designer.cs">
+      <DependentUpon>BloglariGoruntule.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\YaziIslemleri\BlogOlustur.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\YaziIslemleri\BlogOlustur.Designer.cs">
+      <DependentUpon>BlogOlustur.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\YaziIslemleri\BlogSil.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\YaziIslemleri\BlogSil.Designer.cs">
+      <DependentUpon>BlogSil.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\MainMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\MainMenu.Designer.cs">
+      <DependentUpon>MainMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\YorumIslemleri\YorumEkle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\YorumIslemleri\YorumEkle.Designer.cs">
+      <DependentUpon>YorumEkle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\YorumIslemleri\YorumGoster.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\YorumIslemleri\YorumGoster.Designer.cs">
+      <DependentUpon>YorumGoster.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\YorumIslemleri\YorumGuncelle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\YorumIslemleri\YorumGuncelle.Designer.cs">
+      <DependentUpon>YorumGuncelle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\YorumIslemleri\YorumSil.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\YorumIslemleri\YorumSil.Designer.cs">
+      <DependentUpon>YorumSil.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Forms\AdminIslemleri\AdminEkle.resx">
+      <DependentUpon>AdminEkle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AdminIslemleri\AdminListe.resx">
+      <DependentUpon>AdminListe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AdminIslemleri\AdminSil.resx">
+      <DependentUpon>AdminSil.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\GununSozuIslemleri\GununSozuEkle.resx">
+      <DependentUpon>GununSozuEkle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\GununSozuIslemleri\GununSozuGuncelle.resx">
+      <DependentUpon>GununSozuGuncelle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\GununSozuIslemleri\GununSozuListe.resx">
+      <DependentUpon>GununSozuListe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\GununSozuIslemleri\GununSozuSil.resx">
+      <DependentUpon>GununSozuSil.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\KategoriIslemleri\KategoriEkle.resx">
+      <DependentUpon>KategoriEkle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\KategoriIslemleri\KategoriGuncelle.resx">
+      <DependentUpon>KategoriGuncelle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\KategoriIslemleri\KategoriListele.resx">
+      <DependentUpon>KategoriListele.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\KategoriIslemleri\KategoriSil.resx">
+      <DependentUpon>KategoriSil.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\YaziIslemleri\BlogGuncelle.resx">
+      <DependentUpon>BlogGuncelle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\YaziIslemleri\BloglariGoruntule.resx">
+      <DependentUpon>BloglariGoruntule.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\YaziIslemleri\BlogOlustur.resx">
+      <DependentUpon>BlogOlustur.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\YaziIslemleri\BlogSil.resx">
+      <DependentUpon>BlogSil.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\MainMenu.resx">
+      <DependentUpon>MainMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\YorumIslemleri\YorumEkle.resx">
+      <DependentUpon>YorumEkle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\YorumIslemleri\YorumGoster.resx">
+      <DependentUpon>YorumGoster.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\YorumIslemleri\YorumGuncelle.resx">
+      <DependentUpon>YorumGuncelle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\YorumIslemleri\YorumSil.resx">
+      <DependentUpon>YorumSil.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BlogUygulamasi.Business\BlogUygulamasi.Business.csproj">
+      <Project>{8CC429C0-B758-4DAA-B0CD-49713FE3A362}</Project>
+      <Name>BlogUygulamasi.Business</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BlogUygulamasi.Entities\BlogUygulamasi.Entities.csproj">
+      <Project>{7D10C6C7-3E3A-413A-BBE4-71615E7756EB}</Project>
+      <Name>BlogUygulamasi.Entities</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>Bu proje bu bilgisayarda olmayan NuGet paketlerine başvuru yapıyor. Bunları indirmek için NuGet Paket Geri Yükleme'yi kullanın. Daha fazla bilgi için, bkz. http://go.microsoft.com/fwlink/?LinkID=322105. Eksik dosya: {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.targets'))" />
+  </Target>
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" />
+</Project>

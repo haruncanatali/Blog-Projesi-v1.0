@@ -1,0 +1,19 @@
+﻿@using BlogUygulamasi.Entities.Concrete
+@model List<Yazi>
+    
+@if (Model.Count() > 0)
+{
+    <div class="card border-0" style="width:18rem;">
+        <div class="card-header text-center bg-success text-white">
+            <p class="h5">Son Yazılar</p>
+        </div>
+        <ul class="list-group">
+            @foreach (Yazi item in Model)
+            {
+                <li class="list-group-item">
+                    <a class="text-decoration-none" href="/Yazi/Details/@item.YaziId">@item.YaziBaslik</a>  
+                </li>
+            }
+        </ul>
+    </div>
+}

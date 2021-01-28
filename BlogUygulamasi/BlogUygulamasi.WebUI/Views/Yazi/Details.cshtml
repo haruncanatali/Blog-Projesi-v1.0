@@ -1,0 +1,107 @@
+﻿@using BlogUygulamasi.Entities.Concrete;
+@using BlogUygulamasi.Business.Abstract;
+@using BlogUygulamasi.Business.Ninject;
+@model Yazi
+@{
+    ViewBag.Title = "Details";
+}
+
+<div class="card">
+    <div class="card-header bg-secondary">
+        <p class="h4 text-center text-white">@Model.YaziBaslik</p>
+    </div>
+    <img src="~/img/@Model.YaziResimUrl" style="width:300px; height:300px;" class="card-img-top mt-3 mx-auto" />
+    <div class="card-body">
+        @Html.Raw(Model.YaziIcerik)
+    </div>
+    <div class="card-footer">
+        <p class="card-text text-muted">
+            Yazar&nbsp;:&nbsp;@Model.YaziYazar
+        </p>
+        <p class="card-text text-muted">
+            Tarih&nbsp;:&nbsp;@Model.YaziTarih
+        </p>
+    </div>
+</div>
+<div class="card mt-4">
+    <div class="card-header bg-secondary">
+        <p class="h5 text-white">
+            Yorum Yap
+        </p>
+    </div>
+    <div class="card-body">
+        <form action="/Yorum/YorumYap/" method="post">
+            <input hidden name="pageUrl" id="pageUrl" value="/Yazi/Details/@Model.YaziId.ToString()" />
+            <input hidden name="yaziId" id="yaziId" value="@Model.YaziId" />
+            <div class="form-group row">
+                <label for="adTxt" class="col-sm-2 col-form-label">Adınız</label>
+                <div class="col-sm-10">
+                    <input name="adTxt" type="text" class="form-control w-75" id="adTxt" placeholder="Adınızı buraya girin">
+                </div>
+            </div>
+
+            <div class="form-group row mt-2">
+                <label for="soyadTxt" class="col-sm-2 col-form-label">Soyadınız</label>
+                <div class="col-sm-10">
+                    <input name="soyadTxt" type="text" class="form-control w-75" id="soyadTxt" placeholder="Soyadınızı buraya girin">
+                </div>
+            </div>
+
+            <div class="form-group row mt-2">
+                <label for="mailTxt" class="col-sm-2 col-form-label">Mail Adresiniz</label>
+                <div class="col-sm-10">
+                    <input name="mailTxt" type="text" class="form-control w-75" id="mailTxt" placeholder="Mailinizi buraya girin">
+                </div>
+            </div>
+
+            <div class="form-group row mt-2">
+                <label for="mailTxt" class="col-sm-2 col-form-label">Yorumunuz</label>
+                <div class="col-sm-10">
+                    <textarea name="yorumTxt" class="form-control" id="yorumTxt"></textarea>
+                </div>
+            </div>
+
+            <button type="submit" class="form-control btn-success w-25 mx-auto mt-3">Yorum Yap</button>
+
+        </form>
+    </div>
+</div>
+
+<div class="card mt-4">
+    <div class="card-header bg-secondary">
+        <p class="h5 text-white">Yorumlar</p>
+    </div>
+</div>
+
+
+@{ 
+    IYorumService _servis = InstanceFactory.GetInstance<IYorumService>();
+}
+
+@if (_servis.GetAllYorums(c => c.YaziId == Model.YaziId).Count()>0)
+{
+    foreach (Yorum item in _servis.GetAllYorums(c => c.YaziId == Model.YaziId))
+    {
+        <div class="card mt-3">
+            <div class="row">
+                <div class="col-md-2">
+                    <img src="~/img/user.png" class="rounded-circle mx-auto" style="width:150px; height:150px;" />
+                </div>
+                <div class="col-md-10">
+                    <div class="card-body">
+                        <h5 class="card-title">@item.YorumAd &nbsp; @item.YorumSoyad </h5>
+                        <p class="card-text">
+                            @item.YorumIcerik
+                        </p>
+                        <p class="card-text text-muted">@item.YorumMail</p>
+                        <p class="card-text text-muted">@item.YorumTarih.ToString("dd.MM.yyyy")</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+}
+else
+{
+    <p class="text-primary">Henüz yorum yapan olmamış.İlk yorum yapan sen ol!</p>
+}

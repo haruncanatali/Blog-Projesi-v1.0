@@ -1,0 +1,25 @@
+﻿@using BlogUygulamasi.Entities.Concrete;
+@model List<Kategori>
+
+@if (Model.Count() > 0)
+{
+<div class="border-danger" style="width: 18rem;">
+    <div class="card-header text-center bg-success text-white">
+        <span class="h5">Kategoriler</span>
+    </div>
+    <ul class="list-group">
+        @foreach (Kategori item in Model)
+        {
+            <li class="list-group-item">
+                <a href="/Yazi/ListByCategoryName/@item.KategoriId" class="text-decoration-none">@item.KategoriAd</a>
+            </li>
+        }
+    </ul>
+</div>
+}
+else
+{
+    <div class="alert alert-danger">
+        <p class="text-danger">Sistemde kategori bilgisi YOK!</p>
+    </div>
+}

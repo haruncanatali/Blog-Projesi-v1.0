@@ -1,0 +1,27 @@
+﻿@using BlogUygulamasi.Entities.Concrete
+@model List<Yorum>
+
+@if (Model.Count > 0)
+{
+<div class="card border-0" style="width: 18rem;">
+    <div class="card-header text-center bg-success text-white">
+        <span class="h5">Son Yorumlar</span>
+    </div>
+    <ul class="list-group">
+        @foreach (Yorum item in Model)
+        {
+            <li class="list-group-item">
+                <a class="text-decoration-none" href="/Yazi/Details/@item.YaziId">@item.YorumAd&nbsp;:&nbsp;@item.YorumIcerik.Substring(0, 10) ....</a>
+            </li>
+        }
+    </ul>
+</div>
+}
+else
+{
+    <div class="alert alert-danger">
+        <p class="text-danger">
+            Sistemde yorum YOK!
+        </p>
+    </div>
+}

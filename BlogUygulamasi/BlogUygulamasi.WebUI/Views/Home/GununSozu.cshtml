@@ -1,0 +1,22 @@
+﻿@using BlogUygulamasi.Entities.Concrete;
+@model GununSozu
+
+@if (@Model != null)
+{
+    <div class="card border-top-0 border-start-0 border-end-0 border-danger" style="width: 18rem;">
+        <div class="card-header text-center bg-success text-white">
+            <span class="h5">Günün Sözü</span>
+        </div>
+        <img src="~/img/@Model.GununSozuFotoUrl" style="height:300px;" class="card-img-top" alt="...">
+        <div class="card-body">
+            <p class="card-text text-center">"@Model.GununSozuIcerik"</p>
+            <p class="card-text text-muted text-center">@Model.GununSozuSahip&nbsp;&nbsp;@Model.GununSozuTarih.ToString("dd.MM.yyyy")</p>
+        </div>
+    </div>
+}
+else
+{
+    <div class="alert alert-danger">
+        <p class="text-warning">Sisteme günün sözü bilgisi eklenmemiş</p>
+    </div>
+}
